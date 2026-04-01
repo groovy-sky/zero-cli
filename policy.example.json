@@ -1,0 +1,17 @@
+{
+  "fs": {
+    "workspace_host": ".",
+    "workspace_guest": "/sandbox"
+  },
+  "net": {
+    "enabled": true,
+    "http_allow": [
+      "https://api.github.com/",
+      "https://pypi.org/"
+    ]
+  },
+  "limits": {
+    "timeout_ms": 30000,
+    "max_memory_mb": 128
+  }
+}

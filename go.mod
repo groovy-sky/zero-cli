@@ -1,8 +1,5 @@
 module github.com/groovy-sky/zero-cli
 
-go 1.17
+go 1.25
 
-require (
-    github.com/tinygo-org/tinygo v0.22.0
-    github.com/wazeroio/wazero v1.21.0
-)
+require github.com/tetratelabs/wazero v1.7.0
