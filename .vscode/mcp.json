@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "mcp-cli": {
+      "type": "stdio",
+      "command": "./bin/wasm-shell-mcp-linux-amd64",
+      "env": {
+        "MCP_ALLOWED_ROOTS": ".",
+        "MCP_ENFORCE_ALLOWED_ROOTS": "1",
+        "RUST_LOG": "debug",
+        "RUST_BACKTRACE": "1",
+        "MCP_LOG_LEVEL": "trace"
+      }
+    }
+  },
+  "log-level": "trace"
+}

@@ -1,0 +1,3 @@
+[submodule "vendor/coreutils"]
+	path = vendor/coreutils
+	url = https://github.com/uutils/coreutils

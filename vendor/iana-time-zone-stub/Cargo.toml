@@ -1,0 +1,10 @@
+[package]
+name = "iana-time-zone"
+version = "0.1.65"
+edition = "2021"
+description = "Stub: reads /etc/localtime instead of CoreFoundation (cross-compilation shim)"
+license = "MIT OR Apache-2.0"
+
+# This stub always uses the /etc/localtime fallback, so this feature is a no-op.
+[features]
+fallback = []
