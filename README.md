@@ -21,7 +21,7 @@ Run one coreutils applet in the sandbox.
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| command | string | yes | Applet name, for example ls, cat, sort |
+| command | string | yes | Applet name, for example ls, cat, pwd |
 | args | string[] | no | Arguments passed verbatim |
 | stdin | string | no | Text piped to stdin |
 | allowed_paths | string[] | no | Host directories mounted into the sandbox |
@@ -38,15 +38,15 @@ The default build profile focuses on practical editor and CI workflows.
 
 - File and directory ops: ls, cp, mv, rm, mkdir, touch
 - File reading and inspection: cat, head, nl, wc, pwd
-- Text shaping and analysis: sort, uniq, tr, tee
-- Environment and system context: env, printenv, uname, whoami
-- Script helpers: test, printf, mktemp, echo
+- Text shaping and analysis: uniq, tr, tee
+- System context: uname
+- Script helpers: test, printf, echo
 - Integrity checks: sha256sum
 
 Current default command set:
 
-ls, cat, cp, mv, rm, mkdir, touch, pwd, head, nl, wc, sort, uniq, tr, tee,
-sha256sum, env, printenv, uname, whoami, test, printf, mktemp, echo
+ls, cat, cp, mv, rm, mkdir, touch, pwd, head, nl, wc, uniq, tr, tee,
+sha256sum, uname, test, printf, echo
 
 ## Architecture
 

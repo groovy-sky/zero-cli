@@ -217,13 +217,19 @@ async fn main() -> Result<()> {
 
                             match run_result {
                                 Ok(Ok(out)) => {
+                                    let text = format!(
+                                        "exit_code: {}\n\nstdout:\n{}\nstderr:\n{}",
+                                        out.exit_code, out.stdout, out.stderr
+                                    );
                                     json!({
                                         "jsonrpc": "2.0",
                                         "id": id,
                                         "result": {
-                                            "stdout": out.stdout,
-                                            "stderr": out.stderr,
-                                            "exit_code": out.exit_code,
+                                            "content": [{
+                                                "type": "text",
+                                                "text": text
+                                            }],
+                                            "isError": out.exit_code != 0
                                         }
                                     })
                                 }

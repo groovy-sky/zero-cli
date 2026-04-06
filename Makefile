@@ -6,7 +6,7 @@ COREUTILS_DIR := vendor/coreutils
 export PATH := $(HOME)/.cargo/bin:$(PATH)
 CARGO := cargo
 
-UUTILS_FEATURES := ls,cat,cp,mv,rm,mkdir,touch,pwd,head,nl,wc,sort,uniq,tr,tee,sha256sum,env,printenv,uname,whoami,test,printf,mktemp,echo
+UUTILS_FEATURES := ls,cat,cp,mv,rm,mkdir,touch,pwd,head,nl,wc,uniq,tr,tee,sha256sum,uname,test,printf,echo
 
 PLATFORMS := \
 	linux/amd64 \
@@ -22,7 +22,7 @@ all: wasm build
 # ── Build uutils.wasm from the git submodule ────────────────────────────────
 wasm: $(WASM_OUT)
 
-$(WASM_OUT): $(COREUTILS_DIR)/Cargo.toml
+$(WASM_OUT): $(COREUTILS_DIR)/Cargo.toml Makefile
 	$(CARGO) build \
 		--manifest-path $(COREUTILS_DIR)/Cargo.toml \
 		--target wasm32-wasip1 \
